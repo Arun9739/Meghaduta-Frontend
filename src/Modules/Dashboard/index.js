@@ -21,10 +21,14 @@ function Dashboard() {
   console.log("conversations :>> ", conversations);
   console.log("messages :>> ", messages);
   console.log("users :>> ", users);
-
+ 
   useEffect(() => {
     setSocket(io("http://localhost:8080"));
   }, []);
+
+  useEffect(() => {
+    socket?.emit('adduser', user?.id)
+  }, [socket])
 
   useEffect(() => {
     const loggedInUser = JSON.parse(localStorage.getItem("user:detail"));
@@ -62,7 +66,7 @@ function Dashboard() {
 
   const fetchMessages = async (conversationId, receiver) => {
     const res = await fetch(
-      `http://localhost:5000/api/message/${conversationId}?senderId=${receiver?.id}&&receiverId=${receiver?.receiverId}`,
+      `http://localhost:5000/api/message/${conversationId}?senderId=${user?.id}&&receiverId=${receiver?.receiverId}`,
       {
         method: "GET",
         headers: {
