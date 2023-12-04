@@ -6,10 +6,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "primary": "#1476ff",
+        "primary": "#ED41FC",
+        "secondary": "#E1FDD1",
         "primary-light": "#f3f5ff",
-        "light": "#F7D4D0"
+        "light": "#E1FDD1"
       },
+      fontFamily: {
+        'Audiowide': ['Audiowide']
+      }
     },
   },
   plugins: [],
