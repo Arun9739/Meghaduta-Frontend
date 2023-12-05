@@ -6,48 +6,48 @@ import { useNavigate } from "react-router-dom";
 const Form = ({ isSignInPage = false }) => {
   const [data, setData] = useState({
     ...(!isSignInPage && {
-      fullName: "",
+        fullName: ''
     }),
-    email: "",
-    password: "",
-  });
+    email: '',
+    password: ''
+})
+const navigate = useNavigate()
 
-  const handleSubmit = async (e) => {
-    console.log(data);
-    e.preventDefault();
-    const res = await fetch(
-      `http://localhost:5000/api/${isSignInPage ? "login" : "register"}`,
-      {
-        method: "POST",
+const handleSubmit = async(e) => {
+    console.log('data :>> ', data);
+    e.preventDefault()
+    const res = await fetch(`http://localhost:5000/api/${isSignInPage ? 'login' : 'register'}`, {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data),
-      }
-    );
+        body: JSON.stringify(data)
+    })
 
-    if (res.status === 400) {
-      alert("Invalid Credentials - 1");
-    } else {
-      const result = await res.json();
-      console.log(result);
-
-      if (result.token) {
-        localStorage.setItem("user:token", result.token);
-        localStorage.setItem("user:detail", JSON.stringify(result.user));
-        navigate("/");
-      }
+    if(res.status === 400) {
+        alert('Invalid credentials')
+    }else{
+      console.log('test')
+        const resData = await res.json()
+        console.log(resData)
+        if(resData.token) {
+            localStorage.setItem('user:token', resData.token)
+            localStorage.setItem('user:detail', JSON.stringify(resData.user))
+            navigate('/')
+        }
     }
-  };
+}
 
-  const navigate = useNavigate();
   return (
     <div className="bg-light h-screen flex items-center justify-center">
       <div className="bg-white w-[500px] h-[600px] shadow-lg rounded-lg flex flex-col justify-center items-center">
-        <div className="text-4xl font-extrabold font-Audiowide">
+        <div className="text-4xl font-extrabold">
           Meghaduta
         </div>
-        <div className="text-xl font-light mb-14">
+        <div className="text-xl mt-1 mb-10 font-semibold font-poppins subpixel-antialiased">
+          Connect. Chat. Thrive.
+        </div>
+        <div className="text-xl font-light mb-8">
           {isSignInPage ? "Sign in to continue" : "Sign up to get Started"}
         </div>
 

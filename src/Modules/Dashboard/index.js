@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Img1 from "../../Assets/avatar.png";
-import tutorialsdev from "../../Assets/avatar.png";
+import Avatar1 from "../../Assets/avatar2.png";
+import Avatar2 from "../../Assets/avatar3.png";
 import Input from "../../Components/Input";
 import { io } from "socket.io-client";
 
@@ -113,7 +114,7 @@ const Dashboard = () => {
         <div className="flex items-center my-8 mx-14">
           <div>
             <img
-              src={tutorialsdev}
+              src={Avatar2}
               width={75}
               height={75}
               className="border border-primary p-[2px] rounded-full"
@@ -143,7 +144,7 @@ const Dashboard = () => {
                   >
                     <div>
                       <img
-                        src={Img1}
+                        src={Avatar1}
                         className="w-[60px] h-[60px] rounded-full p-[2px] border group-hover:border-white border-primary"
                         alt={user.fullName}
                       />
@@ -170,7 +171,7 @@ const Dashboard = () => {
         {messages?.receiver?.fullName && (
           <div className="w-[75%] bg-secondary h-[80px] my-14 rounded-full flex items-center px-14 py-2">
             <div className="cursor-pointer">
-              <img src={Img1} width={60} height={60} className="rounded-full" />
+              <img src={Avatar1} width={60} height={60} className="rounded-full" />
             </div>
             <div className="ml-6 mr-auto">
               <h3 className="text-lg">{messages?.receiver?.fullName}</h3>
@@ -222,7 +223,7 @@ const Dashboard = () => {
                       className={`max-w-[40%] rounded-b-xl p-4 mb-6 ${
                         id === user?.id
                           ? "bg-primary text-white rounded-tl-xl ml-auto"
-                          : "bg-secondary rounded-tr-xl"
+                          : "bg-[#FBCABC] rounded-tr-xl"
                       } `}
                     >
                       {message}
@@ -233,7 +234,7 @@ const Dashboard = () => {
               })
             ) : (
               <div className="text-center text-lg font-semibold mt-24">
-                No Messages or No Conversation Selected
+                Select a person and send a message to start conversation
               </div>
             )}
           </div>
@@ -243,7 +244,7 @@ const Dashboard = () => {
             <Input
               placeholder="Type a message..."
               value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              onChange={(e) => setMessage(e.target.value)} 
               className="w-[75%]"
               inputClassName="p-4 border-0 shadow-md rounded-full bg-light focus:ring-0 focus:border-0 outline-none"
             />
@@ -312,7 +313,7 @@ const Dashboard = () => {
                 >
                   <div>
                     <img
-                      src={Img1}
+                      src={Avatar1}
                       className="w-[60px] h-[60px] rounded-full p-[2px] border border-primary group-hover:border-white"
                       alt={user.fullName}
                     />

@@ -12,7 +12,7 @@ module.exports = {
         "light": "#E1FDD1"
       },
       fontFamily: {
-        'Audiowide': ['Audiowide']
+        'poppins': ['Poppins', 'sans-serif']
       }
     },
   },
