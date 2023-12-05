@@ -16,7 +16,7 @@ const navigate = useNavigate()
 const handleSubmit = async(e) => {
     console.log('data :>> ', data);
     e.preventDefault()
-    const res = await fetch(`https://meghaduta-server.vercel.app/api/${isSignInPage ? 'login' : 'register'}`, {
+    const res = await fetch(`https://meghaduta-server.onrender.com/api/${isSignInPage ? 'login' : 'register'}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
