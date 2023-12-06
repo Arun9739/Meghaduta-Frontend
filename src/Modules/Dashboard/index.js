@@ -4,7 +4,7 @@ import Avatar1 from "../../Assets/avatar2.png";
 import Avatar2 from "../../Assets/avatar3.png";
 import Input from "../../Components/Input";
 import { io } from "socket.io-client";
-
+ 
 const Dashboard = () => {
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("user:detail"))
@@ -18,6 +18,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     //setSocket(io("http://localhost:8080"));
+    //setSocket(io("http://localhost:5000"));
     setSocket(io("https://meghaduta-server.onrender.com"));
   }, []);
 
