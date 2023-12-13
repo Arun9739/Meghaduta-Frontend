@@ -14,7 +14,7 @@ A real-time chat application built using the MERN stack (MongoDB, Express.js, Re
 
 *Login Page*
 
-![Chat Room]![image](https://github.com/Arun9739/Meghaduta-Frontend/assets/84305637/aa8ff59c-e661-4c33-ad51-59c3c90c9de5)
+![Chat Room](https://github.com/Arun9739/Meghaduta-Frontend/assets/84305637/aa8ff59c-e661-4c33-ad51-59c3c90c9de5)
 
 *Chat Room*
 
